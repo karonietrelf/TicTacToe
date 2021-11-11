@@ -43,8 +43,10 @@ def draw_plot_bar(data):
     sorted_data = []
 
     for name in data:
-        sorted_data.append([(data[name]["points"]), name])
+        sorted_data.append([(data[name]["points"]), name.strip()])
     sorted_data = sorted(sorted_data, reverse=True)
+
+    sorted_data = sorted_data[:5]
 
     X = []
     Y = []
@@ -52,6 +54,7 @@ def draw_plot_bar(data):
     for value in sorted_data:
         X.append(value[1])
         Y.append(value[0])
+
 
     plt.bar(X, Y)
     plt.title('Results')

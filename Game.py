@@ -25,8 +25,8 @@ class Game:
         """
 
     def __init__(self):
-        self.player1 = Player(player_name=input("Please enter first player's name: "))
-        self.player2 = Player(player_name=input("Please enter second player's name: "))
+        self.player1 = Player(player_name=input("Please enter first player's name: ").strip())
+        self.player2 = Player(player_name=input("Please enter second player's name: ").strip())
         self.board1 = Board()
         self.next_move = None
         self.winner = None
