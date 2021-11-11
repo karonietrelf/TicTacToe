@@ -19,9 +19,5 @@ class Player:
 
     def get_sign(self):
         return self.sign
-# #......
-# player1 = Player(name="Simon")
-# print(player1.name)
-# player1.set_sign('O')
-# print(player1.sign)
+
 

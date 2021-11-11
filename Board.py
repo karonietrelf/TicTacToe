@@ -10,7 +10,7 @@ class Board:
     def __init__(self):
         self.board = Board.create_empty_board()
 
-    @staticmethod
+    @staticmethod  #odpowiada do całej klasy, a nie do instancji
     def create_empty_board():
         empty_board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
         return empty_board
@@ -22,3 +22,5 @@ class Board:
     @staticmethod
     def print_instr():
         print("{} | {} | {}\n{} | {} | {}\n{} | {} | {}\n".format(1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+

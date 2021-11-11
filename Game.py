@@ -144,16 +144,15 @@ class Game:
         self.show_instruction()
         input("Press ENTER to start the game.")
         while not self.is_game_over():
-            # self.board1.print_board()
             self.make_move()
             self.change_player()
             self.check_winner()
             self.check_tie()
         if self.is_tie:
-            self.board1.print_board()    #wyświetla końcową tablicę
+            self.board1.print_board()
             print("It's a tie. Game over.")
         else:
-            self.board1.print_board()    #wyświetla końcową tablicę
+            self.board1.print_board()
             print("The winner is {}".format(self.winner.name))
         self.save_data()
 
@@ -169,7 +168,7 @@ class Game:
             self.next_move = self.player1
 
     def save_data(self):
-        with open("test3.txt", "a") as players_results:
+        with open("results.txt", "a") as players_results:
             if self.is_tie == True:
                 players_results.write("{},1\n".format(self.player1.name))
                 players_results.write("{},1\n".format(self.player2.name))

@@ -39,19 +39,19 @@ def parse_file(file_name):
         return dct
 
 
-def plot_bar(data):
-    sorted_data1 = []
+def draw_plot_bar(data):
+    sorted_data = []
 
-    for names in data:
-        sorted_data1.append([(data[names]["points"]), names])
-    sorted_data = sorted(sorted_data1, reverse=True)
+    for name in data:
+        sorted_data.append([(data[name]["points"]), name])
+    sorted_data = sorted(sorted_data, reverse=True)
 
     X = []
     Y = []
 
-    for value_1 in sorted_data:
-        X.append(value_1[1])
-        Y.append(value_1[0])
+    for value in sorted_data:
+        X.append(value[1])
+        Y.append(value[0])
 
     plt.bar(X, Y)
     plt.title('Results')
@@ -60,9 +60,9 @@ def plot_bar(data):
     plt.show()
 
 try:
-    loaded_data = parse_file('test3.txt')
+    loaded_data = parse_file('results.txt')
 except FileNotFoundError:
     print("Play the game to check results.")
     exit(0)
 
-plot_bar(loaded_data)
+draw_plot_bar(loaded_data)

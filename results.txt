@@ -26,3 +26,5 @@ p,2
 p,0
 k,2
 p,0
+karo,2
+piotr,0
