@@ -1,5 +1,6 @@
 from Player import Player
 from Board import Board
+from Data_Plot import draw
 import random
 
 class Game:
@@ -178,5 +179,21 @@ class Game:
 
 
 if __name__ == "__main__":
-    game1 = Game()
-    game1.start_game()
+
+    is_over = False
+    while not is_over:
+        option = ""
+        while option not in ["0", "1", "2"]:
+            option = input("Type: \n1 - to play the game\n2 - to show Score Board\n0 -to Quit\n: ")
+        if option == "1":
+            game1 = Game()
+            game1.start_game()
+        elif option == "2":
+            draw("results.txt")
+        else:
+            exit(0)
+        answer = input("Please ENTER to show Main Menu. To exit type '0'")
+        if answer == "0":
+            is_over = True
+        else:
+            is_over = False

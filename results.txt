@@ -32,3 +32,5 @@ Adele,0
 Karo,2
 Aga,1
 Marcon,1
+piotr,2
+karo,0

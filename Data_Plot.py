@@ -62,10 +62,12 @@ def draw_plot_bar(data):
     plt.ylabel('Points')
     plt.show()
 
-try:
-    loaded_data = parse_file('results.txt')
-except FileNotFoundError:
-    print("Play the game to check results.")
-    exit(0)
+def draw(file):
+    loaded_data = None
+    try:
+        loaded_data = parse_file(file)
+    except FileNotFoundError:
+        print("Play the game to check results.")
+        exit(0)
 
-draw_plot_bar(loaded_data)
+    draw_plot_bar(loaded_data)
